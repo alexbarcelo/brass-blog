@@ -1,0 +1,18 @@
+
+{% if articles_paginator.num_pages > 1 %}
+<div class="clearfix">
+  {% if articles_page.has_previous() %}
+  <a class="btn btn-primary float-left" href="{{ SITEURL }}/{{ articles_previous_page.url }}">
+    &larr; Newer Posts
+  </a>
+  {% endif %}
+<!--  <li class="page-item disabled">
+    <span class="page-link">{{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>
+  </li>-->
+  {% if articles_page.has_next() %}
+  <a class="btn btn-primary float-right" href="{{ SITEURL }}/{{ articles_next_page.url }}">
+    Older Posts &rarr;
+  </a>
+  {% endif %}
+</ul>
+{% endif %}

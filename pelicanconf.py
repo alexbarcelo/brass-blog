@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Beta & Rho'
 SITENAME = 'BRASS Blog'
+SITESURNAME = 'Sooomething else yadda yadda'
 SITEURL = ''
+MAIN_IMAGE = 'theme/clean-blog/img/home-bg.jpg'
+DEFAULT_ARTICLE_IMAGE = 'theme/clean-blog/img/post-bg.jpg'
 
 PATH = 'content'
 
@@ -24,12 +27,14 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
-
+ICONS = (('smile-beam', '#'),)
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+
+THEME = 'theme'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

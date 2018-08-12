@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {% for article in articles_page.object_list %}
+        <div class="post-preview">
+          <a href="{{ SITEURL }}/{{ article.url }}">
+            <h2 class="post-title">
+              {{article.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{ article.summary|striptags }}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            {% for author in article.authors %}
+                    <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            on {{ article.locale_date }}</p>
+        </div>
+        {% endfor %}
+      <hr>
+      <!-- Pager -->
+      {% include 'include/pagination.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}
